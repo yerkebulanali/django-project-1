@@ -7,14 +7,15 @@ div.container {
 }
 
 p.web {
-    font-size: 20px;
+    font-size: 15px;
 
 }
 /* Three columns side by side */
 .column {
   float: left;
-  width: 33.3%;
+  width: 15%;
   margin-bottom: 16px;
+  margin-left: 5px;
   padding: 0 8px;
 }
 
@@ -45,4 +46,36 @@ p.web {
 
 .title {
   color: grey;
+}
+
+table, th, td {
+  font-size: 20px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+  border-spacing: 15px;
+}
+
+.page-header th {
+  background-color: white;
+  color: white;
+}
+.page-header tr:nth-child(even) {
+  background-color: #eee;
+}
+.page-header tr:nth-child(odd) {
+ background-color: #fff;
+}
+#t01 {
+  background-color: #FFC133;
+}
+
+#t02 tr {
+ background-color: #ccd9ff;
+}
+
+#t02 th {
+  background-color: #1a53ff;
+  color: white;
 }
