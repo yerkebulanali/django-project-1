@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="jumbotron">
+
+      <h3>Quadratic Equation a*x*x + b*x + c = 0</h3>
+      <li> a = {{ context.a }} </li>
+      {{ context.a_error }}
+      <li> b = {{ context.b }} </li>
+      {{ context.b_error }}
+      <li> c = {{ context.c }} </li>
+      {{ context.c_error }}
+
+      {% if results %}
+          <h3>Discriminant: {{results.discriminant}}</h3>
+          {% if results.discriminant == 0 %}
+          <h3>Discriminant equals to zero, Quadratic Equation has one root: x1 = x2 = {{ results.x2 }}</h3>
+          {% elif results.discriminant > 0  %}
+          <h3>Quadratic Equation has two roots: x1 = {{ results.x1 }}, x2 = {{ results.x2 }}</h3>
+          {% else %}
+          <h3>Discriminant is less than zero, Quadratic Equation does not have roots.</h3>
+          {% endif %}
+      {% endif %}
+
+    </div>
+</div>

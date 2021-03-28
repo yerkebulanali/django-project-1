@@ -58,7 +58,7 @@ table, th, td {
 }
 
 .page-header th {
-  background-color: white;
+  background-color: black;
   color: white;
 }
 .page-header tr:nth-child(even) {
