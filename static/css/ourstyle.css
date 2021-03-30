@@ -7,7 +7,7 @@ div.container {
 }
 
 p.web {
-    font-size: 15px;
+    font-size: 30px;
 
 }
 /* Three columns side by side */
@@ -49,7 +49,7 @@ p.web {
 }
 
 table, th, td {
-  font-size: 20px;
+  font-size: 15px;
   border: 1px solid black;
   border-collapse: collapse;
   padding: 5px;
@@ -57,8 +57,10 @@ table, th, td {
   border-spacing: 15px;
 }
 
+
+
 .page-header th {
-  background-color: black;
+  background-color: #1a53ff;
   color: white;
 }
 .page-header tr:nth-child(even) {
@@ -76,6 +78,11 @@ table, th, td {
 }
 
 #t02 th {
+  background-color: #1a53ff;
+  color: white;
+}
+
+#coursetb th {
   background-color: #1a53ff;
   color: white;
 }

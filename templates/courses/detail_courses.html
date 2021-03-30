@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Django Students</title>
+    <title>Django Main</title>
 
     <!-- Bootstrap -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/css/ourstyle.css" rel="stylesheet">
+    <link href="/../static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Our style -->
+    <link href="/../static/css/ourstyle.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,71 +32,57 @@
               </button>
               <a class="navbar-brand" href="#">
                 <img style="width: 100px; height: 50px; margin-left: -16px; margin-right: -15px; margin-top: -15px;"
-                     src="../static/images/django-logo.png" />
+                     src="/../static/images/django-logo.png" />
               </a>
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li><a href="index.html">Main</a></li>
-                  <li><a href="contact.html">Contacts</a></li>
-                  <li class="active"><a href="#">Students<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/">Main <span class="sr-only">(current)</span></a></li>
+                <li><a href="/">Contacts</a></li>
+
+                {% for courses in courses_list %}
+                <li><a href="/coursestudents/{{ courses.id }}">Students</a></li>
+                {% endfor %}
 
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
+        <div class="container" role="main">
+            <div class="jumbotron">
+              {% for courses in courses_list %}
+              <h1>{{ courses.name }}</h1>
+                <p class="web">{{ courses.description }}</p>
+              {% endfor %}
+            </div>
 
-      <div class="page-header">
-        <h2>Django Course Students</h2>
-        <p class="web">List of students Graduation 2020 Spring</p>
 
-        <table style="width:50%">
-          <tr>
-            <th>No</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Address</th>
-          </tr>
-          <tr>
-            <td><a href="student_detail.html">1</a></td>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>USA, Golden, CO, 155 Utah street</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>John</td>
-            <td>Amney</td>
-            <td>USA, Arvin, CO, 137 Bolder street</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Jackie</td>
-            <td>Long</td>
-            <td>USA, San Diego, CL, 123 Expand street</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Annie</td>
-            <td>Shever</td>
-            <td>USA, Boulder, CO, 15 River street</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Jimmy</td>
-            <td>Host</td>
-            <td>USA, Buffle, CO, 56 Ducker street</td>
-          </tr>
+            <div >
+              <h2>Course Plan</h2>
+                <table id='coursetb' style="width:100%">
+                  <tr>
+                    <th style="width:3%">#</th>
+                    <th style="width:10%">Lesson</th>
+                    <th>Description</th>
+                  </tr>
+                  {% for lessons in lessons_list %}
+                  <tr>
+                    <td> {{ lessons.id }} </td>
+                    <td> {{ lessons.subject }} </td>
+                    <td> {{ lessons.description }} </td>
+                  </tr>
+                  {% endfor %}
+                </table>
+            </div>
 
-        </table>
-      </div>
+        </div>
     </h1>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="/../static/js/bootstrap.min.js"></script>
   </body>
 </html>

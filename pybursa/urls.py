@@ -16,8 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from quadratic.views import quadratic_results
+from courses.views import detail_courses, detail_lessons
+from students.views import course_students_list, students_list, detail
 
 urlpatterns = [
+    path('', detail_courses),
+    path('courses/<int:pk>/', detail_lessons),
+    path('students/', students_list),
+    path('coursestudents/<int:pk>/', course_students_list),
+    path('students/<int:pk>/', detail),
     path('quadratic/results/', quadratic_results),
     path('admin/', admin.site.urls),
 ]
